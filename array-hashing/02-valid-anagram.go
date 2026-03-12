@@ -4,14 +4,14 @@ package main
 import "fmt"
 
 func isAnagram(s string, t string) bool {
-	frequence := map[rune]int{}
+	frequence := [26]int{}
 
 	for _, c := range s {
-		frequence[c]++
+		frequence[int(c-'a')]++
 	}
 
 	for _, c := range t {
-		frequence[c]--
+		frequence[int(c-'a')]--
 	}
 
 	for _, f := range frequence {
